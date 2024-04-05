@@ -3,13 +3,14 @@
   "category": "misc",
   "pattern": [
     "###",
-    "###",
+    "#？#",
     "###"
   ],
   "key": {
     "#": {
       "item": "tutorialmod:ruby"
-    }
+    },
+
   },
   "result": {
     "item": "tutorialmod:ruby_block"
