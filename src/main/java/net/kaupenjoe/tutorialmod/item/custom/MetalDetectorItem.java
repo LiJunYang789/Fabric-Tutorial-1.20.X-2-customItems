@@ -1,5 +1,6 @@
 package net.kaupenjoe.tutorialmod.item.custom;
 
+import net.kaupenjoe.tutorialmod.util.ModTags;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -59,9 +60,12 @@ public class MetalDetectorItem extends Item {
                 "(" + blockPos.getX() + ", " + blockPos.getY() + ", " + blockPos.getZ() + ")"), false);
     }
 
-    //监测铁矿石和钻石矿
+
     private boolean isValuebleBlock(BlockState state) {
-        return state.isOf(Blocks.IRON_ORE) || state.isOf(Blocks.DIAMOND_ORE);
+        //使用tag方式添加矿物的搜索种类
+        return state.isIn(ModTags.Blocks.METAL_DETECTOR_DETECTABLE_BLOCKS);
+        //监测铁矿石和钻石矿
+       /* return state.isOf(Blocks.IRON_ORE) || state.isOf(Blocks.DIAMOND_ORE);*/
     }
 
     @Override
