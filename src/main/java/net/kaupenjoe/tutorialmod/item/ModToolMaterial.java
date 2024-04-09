@@ -5,7 +5,7 @@ import net.minecraft.recipe.Ingredient;
 
 import java.util.function.Supplier;
 
-//创建一个红宝石大类进行，耐久伤害等属性的定义
+//创建一个红宝石工具大类进行，耐久伤害等属性的定义
 public enum ModToolMaterial implements ToolMaterial {
     RUBY(5, 650, 4.5f, 3.5f, 26,
             () -> Ingredient.ofItems(ModItems.RUBY));
