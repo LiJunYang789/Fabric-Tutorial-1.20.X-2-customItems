@@ -13,5 +13,7 @@ public class TutorialModClient implements ClientModInitializer {
 
         //添加番茄作物的渲染图层
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.TOMATO_CROP, RenderLayer.getCutout());
+
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.CORN_CROP, RenderLayer.getCutout());
     }
 }
