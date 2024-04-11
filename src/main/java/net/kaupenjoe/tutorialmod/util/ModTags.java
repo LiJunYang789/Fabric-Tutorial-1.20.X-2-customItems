@@ -9,7 +9,7 @@ import net.minecraft.util.Identifier;
 
 public class ModTags {
     public static class Blocks {
-        //让这个tag下包含这些物品
+        //创建一个tag
         public static final TagKey<Block> METAL_DETECTOR_DETECTABLE_BLOCKS =
                 createTag("metal_detector_detectable_blocks");
 
@@ -19,7 +19,6 @@ public class ModTags {
     }
 
     public static class Items {
-
 
         private static TagKey<Item> createTag(String name) {
             return TagKey.of(RegistryKeys.ITEM, new Identifier(TutorialMod.MOD_ID, name));

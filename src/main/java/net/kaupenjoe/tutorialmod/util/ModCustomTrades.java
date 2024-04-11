@@ -1,7 +1,9 @@
 package net.kaupenjoe.tutorialmod.util;
 
 import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
+import net.kaupenjoe.tutorialmod.block.ModBlocks;
 import net.kaupenjoe.tutorialmod.item.ModItems;
+import net.kaupenjoe.tutorialmod.villager.ModVillagers;
 import net.minecraft.enchantment.EnchantmentLevelEntry;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.item.EnchantedBookItem;
@@ -12,11 +14,14 @@ import net.minecraft.village.VillagerProfession;
 
 public class ModCustomTrades {
     public static void registerCustomTrades() {
+        //选择村民种类，并选择要添加的交易等级
         TradeOfferHelper.registerVillagerOffers(VillagerProfession.FARMER, 1,
                 factories -> {
                     factories.add((entity, random) -> new TradeOffer(
+                            //确定交易的双方对象
                             new ItemStack(Items.EMERALD, 2),
                             new ItemStack(ModItems.TOMATO, 7),
+                            //兑换次数，，兑换经验
                             6, 5, 0.05f));
 
                     factories.add((entity, random) -> new TradeOffer(
@@ -28,16 +33,34 @@ public class ModCustomTrades {
         TradeOfferHelper.registerVillagerOffers(VillagerProfession.FARMER, 2,
                 factories -> {
                     factories.add((entity, random) -> new TradeOffer(
+                            //两个换一个
                             new ItemStack(Items.GOLD_INGOT, 16),
                             new ItemStack(Items.DIAMOND, 12),
                             new ItemStack(ModItems.CORN_SEEDS, 1),
                             2, 7, 0.075f));
                 });
 
+        TradeOfferHelper.registerVillagerOffers(ModVillagers.SOUND_MASTER, 1,
+                factories -> {
+                    factories.add((entity, random) -> new TradeOffer(
+                            new ItemStack(ModItems.CORN, 32),
+                            new ItemStack(ModBlocks.SOUND_BLOCK, 2),
+                            6, 12, 0.075f));
+                });
+
+        TradeOfferHelper.registerVillagerOffers(ModVillagers.SOUND_MASTER, 2,
+                factories -> {
+                    factories.add((entity, random) -> new TradeOffer(
+                            new ItemStack(ModItems.RUBY_SWORD, 1),
+                            new ItemStack(ModItems.RUBY_HELMET, 1),
+                            2, 12, 0.075f));
+                });
+
         TradeOfferHelper.registerVillagerOffers(VillagerProfession.LIBRARIAN, 1,
                 factories -> {
                     factories.add((entity, random) -> new TradeOffer(
                             new ItemStack(ModItems.RUBY, 32),
+                            //添加兑换的附魔书
                             EnchantedBookItem.forEnchantment(new EnchantmentLevelEntry(Enchantments.PIERCING, 2)),
                             3, 12, 0.075f));
                 });
