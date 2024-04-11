@@ -1,4 +1,4 @@
-// 1.20.1	2024-04-11T07:58:48.1556499	Tutorial Mod/Model Definitions
+// 1.20.1	2024-04-11T08:34:36.6881552	Tutorial Mod/Model Definitions
 41a3337f62f18738eb3f6183d868792e853b94b1 assets\tutorialmod\models\block\corn_crop_stage1.json
 45a6cfeb1afce99e79053ca4d18632f2e14932d4 assets\tutorialmod\models\block\tomato_crop_stage2.json
 ce40c7f2f6c974fee61e3a348d0ece934498eba6 assets\tutorialmod\models\block\ruby_fence_gate_open.json
@@ -84,8 +84,8 @@ dd8175fa12280ab5f11423a30ce62f43befa9a1d assets\tutorialmod\models\item\raw_ruby
 04c7c11c68d3ad251cad98c238b2c049eee90e0b assets\tutorialmod\models\item\ruby_stairs.json
 efc696a9a672cee77981cd6c96e8ac8cbade718e assets\tutorialmod\models\item\ruby_chestplate_copper_trim.json
 092919b82231c2f9cf3d44a1ce3e25e66f26a542 assets\tutorialmod\models\item\ruby_fence.json
-81c58771c6f956628ada19712ede57133eb95836 assets\tutorialmod\models\item\end_stone_ruby_ore.json
 120edcd9284eafa1821e839929f55e2f62e0999b assets\tutorialmod\models\block\ruby_wall_post.json
+81c58771c6f956628ada19712ede57133eb95836 assets\tutorialmod\models\item\end_stone_ruby_ore.json
 4c5c277fa6360b149d6c3ab20584fcc4450cda27 assets\tutorialmod\models\item\corn_seeds.json
 eb1fa20950fba3a8d7186dc327c1ffb0dfce79b6 assets\tutorialmod\models\block\ruby_ore.json
 a339faf3f5e8e97086c87a918bc991210431b7a4 assets\tutorialmod\models\item\ruby_chestplate.json
@@ -148,4 +148,5 @@ ccaabea26ed1357f15716aad8ecc1e26977f745d assets\tutorialmod\blockstates\tomato_c
 ab6d5bb86c6522fa3c42035f2a988d0cad069186 assets\tutorialmod\blockstates\ruby_door.json
 614c8479da11bdafaa7223f769520123ba171468 assets\tutorialmod\models\block\deepslate_ruby_ore.json
 23ede73579d971069e5a5291d5bf4b2fbae662aa assets\tutorialmod\models\item\ruby_boots_netherite_trim.json
+f746b64540daf2ab6302b3ec01a78490c48fc10b assets\tutorialmod\models\item\bar_brawl_music_disc.json
 8a4ea8978f18d5b07ab7d2093effbf9801c35e91 assets\tutorialmod\models\item\ruby_helmet_emerald_trim.json
