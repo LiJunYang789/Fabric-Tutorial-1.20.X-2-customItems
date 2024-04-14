@@ -2,8 +2,11 @@ package net.kaupenjoe.tutorialmod;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.kaupenjoe.tutorialmod.block.ModBlocks;
+import net.kaupenjoe.tutorialmod.entity.ModEntities;
+import net.kaupenjoe.tutorialmod.entity.custom.PorcupineEntity;
 import net.kaupenjoe.tutorialmod.item.ModItemGroups;
 import net.kaupenjoe.tutorialmod.item.ModItems;
 import net.kaupenjoe.tutorialmod.sound.ModSounds;
@@ -32,5 +35,9 @@ public class TutorialMod implements ModInitializer {
 
 		//添加燃烧冷媒，时间200刻度10s
 		FuelRegistry.INSTANCE.add(ModItems.COAL_BRIQUETTE,200);
+
+		//注册自定义豪猪属性
+		FabricDefaultAttributeRegistry.register(ModEntities.PORCUPINE, PorcupineEntity.createPorcupineAttributes());
+
 	}
 }

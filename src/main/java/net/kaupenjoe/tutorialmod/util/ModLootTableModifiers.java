@@ -52,14 +52,14 @@ public class ModLootTableModifiers {
         //由于可疑的考古快的特殊性，不能修改，进行替换
         LootTableEvents.REPLACE.register((resourceManager, lootManager, id, original, source) -> {
             if(SUSPICIOUS_SAND_ID.equals(id)) {
-                //添加玩原始表单后
+              /*  //添加玩原始表单后
                 List<LootPoolEntry> entries = new ArrayList<>(Arrays.asList(original.pools[0].entries));
                 //再进行新掉落物的添加
                 entries.add(ItemEntry.builder(ModItems.METAL_DETECTOR).build());
                 entries.add(ItemEntry.builder(ModItems.COAL_BRIQUETTE).build());
 
                 LootPool.Builder pool = LootPool.builder().with(entries);
-                return LootTable.builder().pool(pool).build();
+                return LootTable.builder().pool(pool).build();*/
             }
 
             return null;

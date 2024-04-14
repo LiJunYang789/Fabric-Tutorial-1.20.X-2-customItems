@@ -14,8 +14,12 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
 
 public class CornCropBlock extends CropBlock {
+    //定义植物的有几种状态
+    //一阶段
     public static final int FIRST_STAGE_MAX_AGE = 7;
+    //二阶段
     public static final int SECOND_STAGE_MAX_AGE = 1;
+    //创建数组植物的生长阶段（控制Y轴）
     private static final VoxelShape[] AGE_TO_SHAPE = new VoxelShape[]{
             Block.createCuboidShape(0.0, 0.0, 0.0, 16.0, 2.0, 16.0),
             Block.createCuboidShape(0.0, 0.0, 0.0, 16.0, 4.0, 16.0),
