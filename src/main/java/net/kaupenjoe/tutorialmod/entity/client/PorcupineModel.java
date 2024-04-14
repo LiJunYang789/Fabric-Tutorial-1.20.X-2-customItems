@@ -168,6 +168,8 @@ public class PorcupineModel<T extends PorcupineEntity> extends SinglePartEntityM
 		//肢体改动幅度（改子骆驼）
 		this.animateMovement(ModAnimations.PORCUPINE_WALK, limbSwing, limbSwingAmount, 2f, 2.5f);
 		this.updateAnimation(entity.idleAnimationState, ModAnimations.PORCUPINE_IDLE, ageInTicks, 1f);
+		//攻击动画
+		this.updateAnimation(entity.attackAnimationState, ModAnimations.PORCUPINE_ATTACK, ageInTicks, 1f);
 	}
 
 	private void setHeadAngles(float headYaw, float headPitch) {
