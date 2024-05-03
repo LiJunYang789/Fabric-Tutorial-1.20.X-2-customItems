@@ -9,11 +9,9 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;
 
 public class PorcupineRenderer extends MobEntityRenderer<PorcupineEntity, PorcupineModel<PorcupineEntity>> {
-    //引用纹理
     private static final Identifier TEXTURE = new Identifier(TutorialMod.MOD_ID, "textures/entity/porcupine.png");
 
     public PorcupineRenderer(EntityRendererFactory.Context context) {
-        //获取豪猪模型.设置阴影大小
         super(context, new PorcupineModel<>(context.getPart(ModModelLayers.PORCUPINE)), 0.6f);
     }
 

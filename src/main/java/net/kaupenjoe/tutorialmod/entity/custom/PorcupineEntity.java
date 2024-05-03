@@ -11,6 +11,7 @@ import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.data.TrackedData;
+import net.minecraft.entity.data.TrackedDataHandler;
 import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.passive.AnimalEntity;
@@ -26,15 +27,13 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
 public class PorcupineEntity extends AnimalEntity {
-
-    //数据跟踪，需要添加数据初始化跟踪器
     private static final TrackedData<Boolean> ATTACKING =
             DataTracker.registerData(PorcupineEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
+
     public final AnimationState idleAnimationState = new AnimationState();
     private int idleAnimationTimeout = 0;
 
     public final AnimationState attackAnimationState = new AnimationState();
-
     public int attackAnimationTimeout = 0;
 
     public PorcupineEntity(EntityType<? extends AnimalEntity> entityType, World world) {
@@ -77,8 +76,6 @@ public class PorcupineEntity extends AnimalEntity {
 
     @Override
     protected void initGoals() {
-        //优先级和目标，相当于添加一些动作
-        //优先级为0，的游泳目标，否则会淹死
         this.goalSelector.add(0, new SwimGoal(this));
 
         this.goalSelector.add(1, new PorcupineAttackGoal(this, 1D, true));
@@ -97,7 +94,6 @@ public class PorcupineEntity extends AnimalEntity {
 
     public static DefaultAttributeContainer.Builder createPorcupineAttributes() {
         return MobEntity.createMobAttributes()
-                //添加基本属性
                 .add(EntityAttributes.GENERIC_MAX_HEALTH, 15)
                 .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.2f)
                 .add(EntityAttributes.GENERIC_ARMOR, 0.5f)
@@ -112,17 +108,15 @@ public class PorcupineEntity extends AnimalEntity {
     public boolean isAttacking() {
         return this.dataTracker.get(ATTACKING);
     }
-    //数据初始化跟踪器
+
     @Override
     protected void initDataTracker() {
         super.initDataTracker();
         this.dataTracker.startTracking(ATTACKING, false);
     }
 
-
     @Override
     public boolean isBreedingItem(ItemStack stack) {
-        //添加繁殖方式
         return stack.isOf(Items.BEETROOT);
     }
 
@@ -132,7 +126,6 @@ public class PorcupineEntity extends AnimalEntity {
         return ModEntities.PORCUPINE.create(world);
     }
 
-    //下面Sound类型文件是覆盖一些声音。
     @Nullable
     @Override
     protected SoundEvent getAmbientSound() {

@@ -11,11 +11,9 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
 public class ModEntities {
-    //注册实体
     public static final EntityType<PorcupineEntity> PORCUPINE = Registry.register(Registries.ENTITY_TYPE,
             new Identifier(TutorialMod.MOD_ID, "porcupine"),
             FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, PorcupineEntity::new)
-                    //创建碰撞箱
                     .dimensions(EntityDimensions.fixed(1f, 1f)).build());
 
 }
